@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="get post">
+        {% if request.user.is_authenticated %}
+            Добро пожаловать, {{ user.username }}!
+        {% else %}
+            <a href="{% url 'login' %}">Авторизуйтесь</a>
+        {% endif %}
+    </form>
+{% endblock %}

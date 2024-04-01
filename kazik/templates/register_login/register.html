@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="ramka">
+        <form action="{% url 'register' %}" method="post">
+
+            <div class="ramka_input_login">
+                <i class="fi fi-rr-user"></i>
+                <input class="input_login" type="text" placeholder="Login" name="input_register" />
+            </div>
+
+            <div class="ramka_input_email">
+                <i class="fi fi-rr-envelope"></i>
+                <input class="input_email" type="email" placeholder="Email" name="input_email" />
+            </div>
+
+            <div class="ramka_input_password">
+                <i class="fi fi-rr-lock"></i>
+                <input class="input_password" type="password" placeholder="Password" name="input_password" />
+            </div>
+
+            <div class="button_r_a">
+                <p class="error_name_or_pas" style="display: {{ error_display }}">There is already a user with that name</p>
+                <input type="submit" value="Register" name="btn_register" />
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

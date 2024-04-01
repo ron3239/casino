@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazik</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a class="Logo" href="{% url 'home' %}"><p>Logo</p></a>
+        </div>
+        <div class="menu">
+            <ul class="navigator">
+                <li><a class="baraban" href="#"><img src="../static/img/header/rouletka.png" alt="baraban"></a></li>
+                <li><a class="rul" href="#"><img src="../static/img/header/slot_machine.png" alt="rouletka"></a></li>
+                <li><a class="case" href="#"><img src="../static/img/header/case.png" alt=""></a></li>
+                <li><a class="case" href="#"><img src="../static/img/header/cube.png" alt=""></a></li>
+                
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <div class="user">
+                            <a class="login" href="#">
+                                <ul><a href="{% url 'login' %}">
+                                    <li><p>{{user.username}}</p></li>
+                                    <li><p>Tokens:{{user.token}}</p></li>
+                                </ul></a>
+                            </a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li><a class="login" href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+    <footer>
+        
+    </footer>
+</body>
+</html>
