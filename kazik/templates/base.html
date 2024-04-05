@@ -10,34 +10,38 @@
 </head>
 <body>
     <header>
-        <div class="logo">
+        <div class="Logo">
             <a class="logo" href="{% url 'home' %}"><p class="logo">Logo</p></a>
         </div>
         <div class="menu">
             <ul class="navigator">
-                <li><a class="baraban" href="#"><img src="../static/img/header/rouletka.png" alt="baraban"></a></li>
+                <li class="baraban"><a href="#"><img src="../static/img/header/rouletka.png" alt="baraban"></a></li>
                 <li><a class="rul" href="#"><img src="../static/img/header/slot_machine.png" alt="rouletka"></a></li>
                 <li><a class="case" href="#"><img src="../static/img/header/case.png" alt=""></a></li>
-                <li><a class="case" href="#"><img src="../static/img/header/cube.png" alt=""></a></li>
-                
+                <li><a class="dice" href="#"><img src="../static/img/header/cube.png" alt=""></a></li>
+            </ul>
+            <ul class="login_ul">
                 {% if request.user.is_authenticated %}
-                    <li>
-                        <div class="user">
-                            <a class="login" href="#">
-                                <ul class="user_token"><a href="{% url 'login' %}">
-                                    <li><p>{{user.username}}</p></li>
-                                    <li><p>Tokens:{{user.token}}</p></li>
-                                </ul></a>
-                            </a>
-                        </div>
-                    </li>
+                <li>
+                    <div class="user">
+                        <a href="#">
+                            <ul class="user_token">
+                                <li class="t"><a href="{% url 'login' %}">
+                                    <p class="p_baza">{{user.username}}</p>
+                                    <p class="p_baza">Tokens:{{user.token}}</p>
+                                </a></li>
+                            </ul>
+                        </a>
+                    </div>
+                </li>
                 {% else %}
-                    <li><a class="login" href="{% url 'login' %}">Login</a></li>
+                <li><a class="login" href="{% url 'login' %}">Login</a></li>
                 {% endif %}
-                
             </ul>
         </div>
     </header>
+    
+    
     
     {% block content %}
     {% endblock %}

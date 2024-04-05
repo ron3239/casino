@@ -25,7 +25,7 @@ h2 {
 	text-align: center;
 }
 
-p {
+.p_reg_log {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -238,6 +238,7 @@ footer {
     z-index: 999;
 }
 
+<<<<<<< HEAD
 footer p {
     margin: 10px 0;
 }
@@ -254,3 +255,5 @@ footer a {
 
 
 
+=======
+>>>>>>> 1bce191e91dd0d469b3840e82e6c54ff15772fc8
