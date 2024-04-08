@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.game{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+}
+
+
+.button_case{
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.img_case{
+    width: 200px;
+    height: 200px;
+}
