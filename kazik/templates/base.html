@@ -17,7 +17,7 @@
             <ul class="navigator">
                 <li class="baraban"><a href="#"><img src="../static/img/header/rouletka.png" alt="baraban"></a></li>
                 <li><a class="rul" href="#"><img src="../static/img/header/slot_machine.png" alt="rouletka"></a></li>
-                <li><a class="case" href="#"><img src="../static/img/header/case.png" alt=""></a></li>
+                <li><a class="case" href="{% url 'case' %}"><img src="../static/img/header/case.png" alt=""></a></li>
                 <li><a class="dice" href="#"><img src="../static/img/header/cube.png" alt=""></a></li>
             </ul>
             <ul class="login_ul">
@@ -28,7 +28,7 @@
                             <ul class="user_token">
                                 <li class="t"><a href="{% url 'login' %}">
                                     <p class="p_baza">{{user.username}}</p>
-                                    <p class="p_baza">Tokens:{{user.token}}</p>
+                                    <p class="p_baza_2">Tokens: {{user.token}}</p>
                                 </a></li>
                             </ul>
                         </a>
@@ -41,12 +41,16 @@
         </div>
     </header>
     
-    
-    
     {% block content %}
     {% endblock %}
+    
     <footer>
         
     </footer>
 </body>
+<script>
+
+</script>
+
+
 </html>

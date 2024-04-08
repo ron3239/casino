@@ -17,7 +17,7 @@ def user_login(request):
 
         if player is not None:
             login(request, player)
-            return redirect('/')
+            return redirect('home')
         else:
             context['error_display_login'] = 'block'
 
@@ -29,9 +29,6 @@ def user_login(request):
 @csrf_exempt
 def register(request):
     context = {'error_display': 'none'}
-    # Player.objects.get(username='eee').delete()
-    #Player.objects.get(username='qwe').delete()
-    # Player.objects.get(username='www').delete()
     if request.method == 'POST':
         try:
             username = request.POST.get('input_r_login')
@@ -44,7 +41,7 @@ def register(request):
             login(request, player)
 
 
-            return redirect('/')
+            return redirect('home')
         except Exception as e:
             context = {'error_display': 'block'}
     return render(request, 'register_login/reg_log.html')
