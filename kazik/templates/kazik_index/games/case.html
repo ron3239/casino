@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/games/case.css' %}">
 
 <script src="{% static 'js/jquery.js' %}"></script>
-<script src="/static/js/update_balance.js"></script>
+<!-- <script src="/static/js/update_balance.js"></script> -->
 
 <div class="game">
     <img class="img_case" src="/static/img/header/case.png">
@@ -13,13 +13,8 @@
 </div>
 
 <script>
-var winLoseUrl = "{% url 'win_lose' %}";
-var url = "{% url 'uptade_tokens' %}";
-var csrf_token = '{{ csrf_token }}'
 
-
-
-function checkTokens(url,csrf_token) {
+function checkTokens() {
     $.ajax({
         type: 'POST',
         url: "{% url 'case_token_need' %}",
@@ -28,8 +23,18 @@ function checkTokens(url,csrf_token) {
         },
         success: function(response) {
             if (response.permission) {
-                random(2, winLoseUrl);
-                updateBalance(url)
+                random(2);
+                $.ajax({
+        url: "{% url 'uptade_tokens' %}",
+        type: 'POST',
+        data: {},
+        success: function(response) {
+            $('.p_baza_2').text('Tokens: '+ response.tokens);
+        },
+        error: function(error) {
+            console.error('Failed to update balance:', error);
+        }
+    });
                 
             } else {
                 alert('Недостаточно токенов');
@@ -38,12 +43,13 @@ function checkTokens(url,csrf_token) {
     });
 }
 
-function random(max, winLoseUrl) {
+function random(max) {
+
     var number = Math.floor(Math.random() * max);
     if (number === 1) {
         $.ajax({
             type: 'POST',
-            url: winLoseUrl,
+            url: "{% url 'win_lose' %}",
             data: {
                 win: 1,
                 need: 2
@@ -53,7 +59,7 @@ function random(max, winLoseUrl) {
     else {
         $.ajax({
             type: 'POST',
-            url: winLoseUrl,
+            url: "{% url 'win_lose' %}",
             data: {
                 win: 0,
                 need: 5
@@ -61,5 +67,7 @@ function random(max, winLoseUrl) {
         });
     }
 }
+
+
 </script>
 {% endblock %}
