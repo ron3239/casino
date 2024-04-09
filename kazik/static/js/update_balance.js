@@ -1,10 +1,8 @@
-function updateBalance(url,csrf_token) {
+function updateBalance(url) {
     $.ajax({
         url: url,
         type: 'POST',
-        data: {
-            csrfmiddlewaretoken: csrf_token
-        },
+        data: {},
         success: function(response) {
             $('.p_baza_2').text('Tokens: '+ response.tokens);
         },
