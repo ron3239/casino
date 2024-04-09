@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/games/case.css' %}">
 
 <script src="{% static 'js/jquery.js' %}"></script>
-<!-- <script src="/static/js/update_balance.js"></script> -->
+<script src="/static/js/update_balance.js"></script>
 
 <div class="game">
     <img class="img_case" src="/static/img/header/case.png">
@@ -24,17 +24,7 @@ function checkTokens() {
         success: function(response) {
             if (response.permission) {
                 random(2);
-                $.ajax({
-        url: "{% url 'uptade_tokens' %}",
-        type: 'POST',
-        data: {},
-        success: function(response) {
-            $('.p_baza_2').text('Tokens: '+ response.tokens);
-        },
-        error: function(error) {
-            console.error('Failed to update balance:', error);
-        }
-    });
+                updateBalance("{% url 'uptade_tokens' %}")
                 
             } else {
                 alert('Недостаточно токенов');
