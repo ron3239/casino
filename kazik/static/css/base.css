@@ -74,6 +74,7 @@ ul{
 }
 header{
     user-select: none;
+<<<<<<< HEAD
     position: fixed;
     top: 0;
     left: 0;
@@ -167,6 +168,8 @@ header li{
      align-items: center;
 }
 header{
+=======
+>>>>>>> ab10ae64a1b6e3f8bcfb24bb8b181cf720f9e7b5
     position: fixed;
     top: 0;
     left: 0;
@@ -216,7 +219,7 @@ header li{
     flex-direction: row;
 }
 
-.p_baza{
+.p_baza,.p_baza_2{
     list-style: none;
 
 }
