@@ -74,7 +74,6 @@ ul{
 }
 header{
     user-select: none;
-<<<<<<< HEAD
     position: fixed;
     top: 0;
     left: 0;
@@ -158,9 +157,6 @@ header li{
 }
 
 
-
-
-
 .menu img{
      width: 35px;
      display:  flex;
@@ -168,8 +164,6 @@ header li{
      align-items: center;
 }
 header{
-=======
->>>>>>> ab10ae64a1b6e3f8bcfb24bb8b181cf720f9e7b5
     position: fixed;
     top: 0;
     left: 0;
