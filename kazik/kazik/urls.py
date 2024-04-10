@@ -20,10 +20,15 @@ from kazik_index import views_1
 from register_login import views
 
 urlpatterns = [
+    path('',views_1.index,name='home'),
     path('admin/', admin.site.urls),
-    path('',views_1.index),
     path('login/',views.user_login,name='login'),
     path('register/', views.register, name='register'),
-    path('',views_1.index,name='home'),
-    
+    path('case/',views_1.case,name='case'),
+    # ajax
+    path('uptade_tokens/',views_1.uptade_tokens,name='uptade_tokens'),
+    path('case_token_need/',views_1.case_token_need,name='case_token_need'),
+    path('win_lose/',views_1.win_lose,name='win_lose'),
 ]
+
+

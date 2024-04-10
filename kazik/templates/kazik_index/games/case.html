@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/games/case.css' %}">
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="/static/js/update_balance.js"></script>
+
+<div class="game">
+    <img class="img_case" src="/static/img/header/case.png">
+    <button class="button_case" type="button" onclick=checkTokens()>5 Tokens</button>
+</div>
+
+<script>
+
+function checkTokens() {
+    $.ajax({
+        type: 'POST',
+        url: "{% url 'case_token_need' %}",
+        data: {
+            tokens_need: 5
+        },
+        success: function(response) {
+            if (response.permission) {
+                random(2);
+                updateBalance("{% url 'uptade_tokens' %}")
+                
+            } else {
+                alert('Недостаточно токенов');
+            }
+        }
+    });
+}
+
+function random(max) {
+
+    var number = Math.floor(Math.random() * max);
+    if (number === 1) {
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'win_lose' %}",
+            data: {
+                win: 1,
+                need: 2
+            }
+        });
+    }
+    else {
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'win_lose' %}",
+            data: {
+                win: 0,
+                need: 5
+            }
+        });
+    }
+}
+
+
+</script>
+{% endblock %}

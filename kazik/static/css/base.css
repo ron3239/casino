@@ -26,7 +26,10 @@ a{
 }
 
 header{
+<<<<<<< HEAD
     user-select: none;
+=======
+>>>>>>> main
     position: fixed;
     top: 0;
     left: 0;

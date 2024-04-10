@@ -1,7 +1,6 @@
-from typing import Any
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.hashers import make_password
+
 
 # Create your models here.
 class Player(AbstractUser):
@@ -10,8 +9,10 @@ class Player(AbstractUser):
     email = models.EmailField(unique=True)
     token = models.IntegerField(default=20)
 
-
-
-    def __str__(self):
+    def __str__(self) -> str:
         return self.username
+    
+
+
+
 
