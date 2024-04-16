@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/games/case.css' %}">
 
 <script src="{% static 'js/jquery.js' %}"></script>
-<script src="/static/js/update_balance.js"></script>
+<!-- <script src="/static/js/update_balance.js"></script> -->
 
 <div class="game">
     <img class="img_case" src="/static/img/header/case.png">
@@ -17,48 +17,21 @@
 function checkTokens() {
     $.ajax({
         type: 'POST',
-        url: "{% url 'case_token_need' %}",
-        data: {
-            tokens_need: 5
-        },
+        url: "{% url 'game_case' %}",
         success: function(response) {
-            if (response.permission) {
-                random(2);
-                setTimeout(20)
-                updateBalance("{% url 'uptade_tokens' %}")
-                
-            } else {
-                alert('Недостаточно токенов');
-            }
-        }
-    });
-}
-
-function random(max) {
-
-    var number = Math.floor(Math.random() * max);
-    if (number === 1) {
-        $.ajax({
-            type: 'POST',
-            url: "{% url 'win_lose' %}",
-            data: {
-                win: 1,
-                need: 2
-            }
-        });
+            if (response.balance) {
+                $('.p_baza_2').text('Tokens: '+ response.balance);
+      } else if (response.status === false) {
+        alert('Недостаточно токенов');
+      } else {
+        console.error('not ajax')
+      }
+    },
+    error: function(error) {
+      console.error('Error occurred:', error);
     }
-    else {
-        $.ajax({
-            type: 'POST',
-            url: "{% url 'win_lose' %}",
-            data: {
-                win: 0,
-                need: 5
-            }
-        });
-    }
+  });
 }
-
 
 </script>
 {% endblock %}

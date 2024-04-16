@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from random import randint
 
 
 @csrf_exempt
@@ -19,69 +20,25 @@ def case(request):
 
 # ajax
 @csrf_exempt
-def uptade_tokens(request):
-    player = request.user
-
-    if request.method == 'POST':
-       data = {'tokens': player.token}
-
-    return JsonResponse(data)
-
-
-
-@csrf_exempt
-def case_token_need(request):
-
-        data={}
-
-        if request.method == 'POST':
-
-                tokens_need=request.POST.get('tokens_need')
-                player=request.user
-
-                if not player:
-                       data={
-                              'not_reg_log':True
-                       }
-                else:
-                        tokens_user=int(player.token)
-                        if tokens_user>=int(tokens_need):
-                                data={
-                                     'not_reg_log':False,
-                                     'permission':True
-                              }
-                        else:
-                                data={
-                                     'not_reg_log':False,
-                                     'permission':False
-                              }
-
-                return JsonResponse(data)
-pass
-
-
-@csrf_exempt
-def win_lose(request):
-    if request.method == 'POST':
-        win = bool(int(request.POST.get('win')))
-        need = int(request.POST.get('need'))
-        player = request.user
-
-
-        if win:
-               player.token+=need
-        elif player.token-need<0:
-               player.token=0
-        else:
-               player.token-=need
-
-        player.save()
-        response_data = {'status': True}
-
-        return JsonResponse(response_data)
-
-
-
-
-
-
+def game_case(request):
+       player = request.user
+       if request.method== 'POST':
+              if player.token>=5:
+                     number=randint(0,2)
+                     
+                     if number == 1:
+                            player.token+=2
+                     elif number == 0:
+                            player.token-=5
+                            
+                     player.save()
+                     
+                     data = {
+                            'balance':player.token
+                     }
+              else:
+                     data = {
+                            'status':False
+                            }
+       return JsonResponse(data=data)
+              

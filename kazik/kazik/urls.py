@@ -26,9 +26,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('case/',views_1.case,name='case'),
     # ajax
-    path('uptade_tokens/',views_1.uptade_tokens,name='uptade_tokens'),
-    path('case_token_need/',views_1.case_token_need,name='case_token_need'),
-    path('win_lose/',views_1.win_lose,name='win_lose'),
+    path('game_case/',views_1.game_case,name='game_case'),
 ]
 
 
