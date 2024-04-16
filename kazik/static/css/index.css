@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    background-image: url(../img/header/BackGround.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.avtomat {
+    position: static;
+    width: 100%;
+    height: 40vw;
+}
+
+.avtomat__img {
+    position: absolute;
+    
+}
+
+.planet-avtomat {
+    left: 50vw;
+    top: 10vw;
+    width: 40vw;
+    z-index: 2;
+}
+
+.planet-avtomat:hover + .kapli-avtomat {
+    left: 49vw;
+    top: 10vw;
+    width: 41vw;
+    transform: rotate(5deg);
+    filter: drop-shadow(0 0 20px #ffffff)
+}
+
+.kapli-avtomat {
+    width: 22vw;
+    top: 22vw;
+    left: 59vw;
+    z-index: 1;
+    transition: 0.5s;
+   
+}
+
+
+
+/* case section */
+
+.case {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+}
+
+.case__img {
+    position: absolute;
+    
+}
+
+.planet-case {
+    left: 10vw;
+    top: 3vw;
+    width: 42vw;
+    z-index: 2;
+}
+
+.planet-case:hover + .kapli-case {
+    left: 9vw;
+    top: 7vw;
+    width: 44vw;
+    transform: rotate(5deg);
+    filter: drop-shadow(0 0 20px #ffffff)
+}
+
+.kapli-case {
+    width: 22vw;
+    top: 17vw;
+    left: 19vw;
+    z-index: 1;
+    transition: 0.5s;
+   
+}
+
+
+/* case section */
+
+
+.ruletka {
+    position: relative;
+    width: 100%;
+    height: 60vw;
+}
+
+.ruletka__img {
+    position: absolute;
+    
+}
+
+.planet-ruletka {
+    left: 50vw;
+    top: 6vw;
+    width: 37vw;
+    z-index: 2;
+}
+
+.planet-ruletka:hover + .kapli-ruletka {
+    left: 40vw;
+    top: 5vw;
+    width: 55vw;
+    transform: rotate(5deg);
+    filter: drop-shadow(0 0 20px #ffffff)
+}
+
+.kapli-ruletka {
+    width: 22vw;
+    top: 17vw;
+    left: 55vw;
+    z-index: 1;
+    transition: 0.5s;
+   
+}
+
+
+/* cart section */
+
+
+.case {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+}
+
+.case__img {
+    position: absolute;
+    
+}
+
+.planet-case {
+    left: 10vw;
+    top: 3vw;
+    width: 42vw;
+    z-index: 2;
+}
+
+.planet-case:hover + .kapli-case {
+    left: 9vw;
+    top: 7vw;
+    width: 44vw;
+    transform: rotate(5deg);
+    filter: drop-shadow(0 0 20px #ffffff)
+}
+
+.kapli-case {
+    width: 22vw;
+    top: 17vw;
+    left: 19vw;
+    z-index: 1;
+    transition: 0.5s;
+   
+}
+
+
+/* case section */
+
+
+.cart {
+    position: relative;
+    width: 100%;
+    height: 60vw;
+}
+
+.cart__img {
+    position: absolute;
+    
+}
+
+.planet-cart {
+    left: 11vw;
+    top: 6vw;
+    width: 37vw;
+    z-index: 2;
+}
+
+.planet-cart:hover + .kapli-cart {
+    left: 6vw;
+    top: 5vw;
+    width: 45vw;
+    transform: rotate(5deg);
+    filter: drop-shadow(0 0 20px #ffffff)
+}
+
+.kapli-cart {
+    width: 20vw;
+    top: 17vw;
+    left: 20vw;
+    z-index: 1;
+    transition: 0.5s;
+   
+}

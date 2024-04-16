@@ -10,35 +10,39 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
 }
 
 
 a{
     text-decoration: none;
     color: black;
-}
+}       
 
 .menu img{
-     width: 35px;
+     width: 60px;
      display:  flex;
      justify-content: space-between;
      align-items: center;
+     border-radius: 15%  ;
 }
 
+
 header{
-    position: fixed;
+    user-select: none;
+    position: relative;
     top: 0;
     left: 0;
-    width: 100%; 
+    width: 100%;    
     padding: 20px 100px;
-    background-color: aqua;
     z-index: 99;
     display:  flex;
     justify-content: space-between; 
     align-items: center;
     height: 75px;
-
+    backdrop-filter: blur(5px);
 }
+
 
 li{
     list-style: none;
@@ -58,37 +62,17 @@ ul{
     font-size: 25px;
     font-weight: 500;
     margin-left: 40px;
-}
+}   
 
 .logo{
     font-size: 25px;
-    margin: 0px;
-    padding: 0px;
+    width: 140px;
 }
 
-.menu img{
-     width: 35px;
-     display:  flex;
-     justify-content: space-between;
-     align-items: center;
-}
-header{
-    user-select: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    padding: 20px 100px;
-    z-index: 99;
-    display:  flex;
-    justify-content: space-between; 
-    align-items: center;
-    height: 75px;
-}
 
 .menu{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -125,7 +109,6 @@ header li{
 
 .p_baza,.p_baza_2{
     list-style: none;
-
 }
 
 .login_ul li{
@@ -149,104 +132,11 @@ header li{
 }
 
 
-.login_ul p, .login{
+.login_ul p, .login_ul a{   
     position: relative;
     font-size: 25px;
     font-weight: 500;
     margin-left: 30px;
+    color: aliceblue;
 }
-
-
-.menu img{
-     width: 35px;
-     display:  flex;
-     justify-content: space-between;
-     align-items: center;
-}
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    padding: 20px 100px;
-    z-index: 99;
-    display:  flex;
-    justify-content: space-between; 
-    align-items: center;
-    height: 75px;
-}
-
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header li{
-    list-style: none;
-    display:  flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navigator{
-    display: flex;
-    align-items: center;
-    
-}
-
-.navigator a{
-    position: relative;
-    font-size: 25px;
-    font-weight: 500;
-    margin-left: 40px;
-}
-
-.logo{
-    font-size: 25px;
-    margin: 0px;
-    padding: 0px;
-}
-
-.test{
-    display: flex;
-    flex-direction: row;
-}
-
-.p_baza,.p_baza_2{
-    list-style: none;
-
-}
-
-.login_ul li{
-    list-style: none;
-    display:  flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.login_ul{
-    position: relative;
-    font-size: 25px;
-    font-weight: 100;
-    margin-left: 40px;
-
-}
-
-.login_ul a{
-    text-decoration: none;
-    color: black;
-}
-
-
-.login_ul p, .login{
-    position: relative;
-    font-size: 25px;
-    font-weight: 500;
-    margin-left: 30px;
-}
-
-
-
-
 

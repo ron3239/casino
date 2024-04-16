@@ -21,7 +21,7 @@ def user_login(request):
         else:
             context['error_display_login'] = 'block'
 
-    return render(request, 'register_login/reg_log.html')
+    return render(request, 'reg_log.html')
 
 
 
@@ -44,4 +44,4 @@ def register(request):
             return redirect('home')
         except Exception as e:
             context = {'error_display': 'block'}
-    return render(request, 'register_login/reg_log.html')
+    return render(request, 'reg_log.html')

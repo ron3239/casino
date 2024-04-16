@@ -24,6 +24,7 @@ function checkTokens() {
         success: function(response) {
             if (response.permission) {
                 random(2);
+                setTimeout(20)
                 updateBalance("{% url 'uptade_tokens' %}")
                 
             } else {

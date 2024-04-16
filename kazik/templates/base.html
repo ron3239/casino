@@ -11,27 +11,25 @@
 <body>
     <header>
         <div class="Logo">
-            <a class="logo" href="{% url 'home' %}"><p class="logo">Logo</p></a>
+            <a href="{% url 'home' %}"><img src="../static/img/header/logo.png"  class="logo"></a>
         </div>
         <div class="menu">
             <ul class="navigator">
-                <li class="baraban"><a href="#"><img src="../static/img/header/rouletka.png" alt="baraban"></a></li>
-                <li><a class="rul" href="#"><img src="../static/img/header/slot_machine.png" alt="rouletka"></a></li>
-                <li><a class="case" href="{% url 'case' %}"><img src="../static/img/header/case.png" alt=""></a></li>
-                <li><a class="dice" href="#"><img src="../static/img/header/cube.png" alt=""></a></li>
+                <li><a class="header-list_a" href="#"><img src="../static/img/header/cart.png" class="header-list_img"></a></li>
+                <li><a class="header-list_a" href="#"><img src="../static/img/header/ruletka.png" class="header-list_img"></a></li>
+                <li><a class="header-list_a" href="{% url 'case' %}"><img src="../static/img/header/case.png" class="header-list_img"></a></li>
+                <li><a class="header-list_a" href="#"><img src="../static/img/header/avtomat.png" class="header-list_img"></a></li>
             </ul>
             <ul class="login_ul">
                 {% if request.user.is_authenticated %}
                 <li>
                     <div class="user">
-                        <a href="#">
-                            <ul class="user_token">
-                                <li class="t"><a href="{% url 'login' %}">
-                                    <p class="p_baza">{{user.username}}</p>
-                                    <p class="p_baza_2">Tokens: {{user.token}}</p>
-                                </a></li>
-                            </ul>
-                        </a>
+                        <ul class="user_token">
+                            <li class="t"><a href="{% url 'login' %}">  
+                                <p class="p_baza">{{user.username}}</p>
+                                <p class="p_baza_2">Tokens: {{user.token}}</p>
+                            </a></li>
+                        </ul>
                     </div>
                 </li>
                 {% else %}

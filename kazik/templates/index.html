@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+<body>
+    
+    <section class="avtomat">
+        <a href="#">
+            <img class="avtomat__img planet-avtomat" src="../static/img/index/planets/avtomatP.png" alt="">
+            <img class="avtomat__img kapli-avtomat" src="../static/img/index/effects/blue.png" alt="">
+        </a>
+    </section>
+    <section class="case">
+        <a href="{% url 'case' %}">
+            <img class="case__img planet-case" src="../static/img/index/planets/caseP.png" alt="">
+            <img class="case__img kapli-case" src="../static/img/index/effects/purple.png" alt="">
+        </a>
+    </section>
+    <section class="ruletka">
+        <a href="#">
+            <img class="ruletka__img planet-ruletka" src="../static/img/index/planets/ruletkaP.png" alt="">
+            <img class="ruletka__img kapli-ruletka" src="../static/img/index/effects/red.png" alt="">
+        </a>
+    </section>
+    <section class="cart">
+        <a href="#">
+            <img class="cart__img planet-cart" src="../static/img/index/planets/cartP.png" alt="">
+            <img class="cart__img kapli-cart" src="../static/img/index/effects/green.png" alt="">
+        </a>
+    </section>
+</body>
+{% endblock %}

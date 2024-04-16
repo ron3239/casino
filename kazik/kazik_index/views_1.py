@@ -9,7 +9,7 @@ def index(request):
             'Login':'login'
     }
 
-    return render(request=request,template_name='kazik_index\index.html')
+    return render(request=request,template_name='index.html')
 @csrf_exempt
 def case(request):
         return render (request,template_name='kazik_index\games\case.html')
