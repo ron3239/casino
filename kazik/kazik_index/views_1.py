@@ -16,8 +16,6 @@ def case(request):
         return render (request,template_name='kazik_index\games\case.html')
 
 
-
-
 # ajax
 @csrf_exempt
 def game_case(request):
