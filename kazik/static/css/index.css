@@ -4,11 +4,20 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 body {
     font-family: "IBM Plex Sans", sans-serif;
-    background-image: url(../img/header/BackGround.png);
+    background-image: url(../img/index/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -33,14 +42,17 @@ body {
 }
 
 .planet-avtomat:hover + .kapli-avtomat {
+    display:block;
     left: 49vw;
     top: 10vw;
     width: 41vw;
     transform: rotate(5deg);
-    filter: drop-shadow(0 0 20px #ffffff)
+    filter: drop-shadow(0 0 20px #ffffff);
+    animation: appear 0.4s alternate forwards;
 }
 
 .kapli-avtomat {
+    display: none;
     width: 22vw;
     top: 22vw;
     left: 59vw;
@@ -48,7 +60,6 @@ body {
     transition: 0.5s;
    
 }
-
 
 
 /* case section */
@@ -66,32 +77,31 @@ body {
 
 .planet-case {
     left: 10vw;
-    top: 3vw;
+    top: 13vw;
     width: 42vw;
     z-index: 2;
 }
 
 .planet-case:hover + .kapli-case {
+    display:block;
     left: 9vw;
     top: 7vw;
     width: 44vw;
     transform: rotate(5deg);
-    filter: drop-shadow(0 0 20px #ffffff)
+    filter: drop-shadow(0 0 20px #ffffff);
+    animation: appear 0.4s alternate forwards;
 }
 
 .kapli-case {
+    display: none;
     width: 22vw;
     top: 17vw;
     left: 19vw;
     z-index: 1;
-    transition: 0.5s;
-   
 }
 
 
-/* case section */
-
-
+/* ruletka section */
 .ruletka {
     position: relative;
     width: 100%;
@@ -105,20 +115,23 @@ body {
 
 .planet-ruletka {
     left: 50vw;
-    top: 6vw;
+    top: 11vw;
     width: 37vw;
     z-index: 2;
 }
 
 .planet-ruletka:hover + .kapli-ruletka {
+    display:block;
     left: 40vw;
     top: 5vw;
     width: 55vw;
     transform: rotate(5deg);
-    filter: drop-shadow(0 0 20px #ffffff)
+    filter: drop-shadow(0 0 20px #ffffff);
+    animation: appear 0.4s alternate forwards;
 }
 
 .kapli-ruletka {
+    display: none;
     width: 22vw;
     top: 17vw;
     left: 55vw;
@@ -130,44 +143,6 @@ body {
 
 /* cart section */
 
-
-.case {
-    position: relative;
-    width: 100%;
-    height: 50vw;
-}
-
-.case__img {
-    position: absolute;
-    
-}
-
-.planet-case {
-    left: 10vw;
-    top: 3vw;
-    width: 42vw;
-    z-index: 2;
-}
-
-.planet-case:hover + .kapli-case {
-    left: 9vw;
-    top: 7vw;
-    width: 44vw;
-    transform: rotate(5deg);
-    filter: drop-shadow(0 0 20px #ffffff)
-}
-
-.kapli-case {
-    width: 22vw;
-    top: 17vw;
-    left: 19vw;
-    z-index: 1;
-    transition: 0.5s;
-   
-}
-
-
-/* case section */
 
 
 .cart {
@@ -189,15 +164,19 @@ body {
 }
 
 .planet-cart:hover + .kapli-cart {
+    display:block;
     left: 6vw;
     top: 5vw;
     width: 45vw;
     transform: rotate(5deg);
-    filter: drop-shadow(0 0 20px #ffffff)
+    filter: drop-shadow(0 0 20px #ffffff);
+    animation: appear 0.4s alternate forwards;
 }
 
 .kapli-cart {
+    display: none;
     width: 20vw;
+    display:block;
     top: 17vw;
     left: 20vw;
     z-index: 1;

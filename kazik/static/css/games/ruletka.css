@@ -1,0 +1,42 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body{
+    background: url(/static/img/games/ruletka/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+.ruletka{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    img{
+        width: 250px;
+        height: 250px;
+    }
+
+    button{
+        width: 100px;
+        height: 30px;
+    }
+}
+
+
+
+
+
+
+
+  

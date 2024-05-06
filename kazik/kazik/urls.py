@@ -25,6 +25,7 @@ urlpatterns = [
     path('login/',views.user_login,name='login'),
     path('register/', views.register, name='register'),
     path('case/',views_1.case,name='case'),
+    path('ruletka/',views_1.ruletka,name='ruletka'),
     # ajax
     path('game_case/',views_1.game_case,name='game_case'),
 ]
