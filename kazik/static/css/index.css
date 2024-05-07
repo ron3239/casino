@@ -35,9 +35,9 @@ body {
 }
 
 .planet-avtomat {
-    left: 50vw;
-    top: 10vw;
-    width: 40vw;
+    left: 55vw;
+    top: 20vw;
+    width: 30vw;
     z-index: 2;
 }
 
@@ -176,7 +176,6 @@ body {
 .kapli-cart {
     display: none;
     width: 20vw;
-    display:block;
     top: 17vw;
     left: 20vw;
     z-index: 1;

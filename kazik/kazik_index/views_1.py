@@ -13,7 +13,7 @@ def index(request):
     return render(request=request,template_name='index.html')
 @csrf_exempt
 def case(request):
-        return render (request,template_name='kazik_index\games\case.html')
+        return render (request,template_name='kazik_index/games/case.html')
 
 @csrf_exempt
 def ruletka(request):
