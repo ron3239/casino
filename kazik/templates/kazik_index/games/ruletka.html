@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/games/ruletka.css' %}">
 
 <div class="ruletka">
-  <button id="spin" onclick="rotateElem">Spin</button>
-  <span class="arrow"></span>
-  <img src="/static/img/games/ruletka/roulette.png" id="ruletka" class="img_rul">
+    <div class="ruletka_box">
+    <button id="spin" onclick="rotateElem">Spin</button>
+    <span class="arrow"></span>
+    <img src="/static/img/games/ruletka/roulette.png" id="ruletka" class="img_rul">
+  </div>
 </div>
 
 <script>

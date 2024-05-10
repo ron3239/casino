@@ -48,7 +48,7 @@ body {
     width: 41vw;
     transform: rotate(5deg);
     filter: drop-shadow(0 0 20px #ffffff);
-    animation: appear 0.4s alternate forwards;
+    animation: appear 0.4s ease-in-out forwards;
 }
 
 .kapli-avtomat {
@@ -89,7 +89,7 @@ body {
     width: 44vw;
     transform: rotate(5deg);
     filter: drop-shadow(0 0 20px #ffffff);
-    animation: appear 0.4s alternate forwards;
+    animation: appear 0.4s ease-in-out forwards;
 }
 
 .kapli-case {
@@ -127,7 +127,7 @@ body {
     width: 55vw;
     transform: rotate(5deg);
     filter: drop-shadow(0 0 20px #ffffff);
-    animation: appear 0.4s alternate forwards;
+    animation: appear 0.4s ease-in-out forwards;
 }
 
 .kapli-ruletka {
@@ -165,12 +165,12 @@ body {
 
 .planet-cart:hover + .kapli-cart {
     display:block;
-    left: 6vw;
-    top: 5vw;
-    width: 45vw;
+    left: 1vw;
+    top: -8vw;
+    width: 60vw;
     transform: rotate(5deg);
     filter: drop-shadow(0 0 20px #ffffff);
-    animation: appear 0.4s alternate forwards;
+    animation: appear 0.4s ease-in-out forwards;
 }
 
 .kapli-cart {
