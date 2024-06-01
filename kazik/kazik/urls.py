@@ -15,19 +15,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from kazik_index import views_1
 from register_login import views
 
-urlpatterns = [
-    path('',views_1.index,name='home'),
-    path('admin/', admin.site.urls),
-    path('login/',views.user_login,name='login'),
-    path('register/', views.register, name='register'),
-    path('case/',views_1.case,name='case'),
-    path('ruletka/',views_1.ruletka,name='ruletka'),
-    # ajax
-    path('game_case/',views_1.game_case,name='game_case'),
+ajax_url=[
+    path('permission',views_1.permission,name='permission'),
+    path('win_lose',views_1.win_lose,name='win_lose'),
+    path('update_balance',views_1.update_balance,name='update_balance'),
 ]
 
+
+
+
+urlpatterns = [
+    path('', views_1.index, name='home'),
+    path('admin/', admin.site.urls),
+    path('login/', views.user_login, name='login'),
+    path('register/', views.register, name='register'),
+    path('case/', views_1.case, name='case'), 
+    path('ruletka/', views_1.ruletka, name='ruletka'),
+    path('ajax/', include(ajax_url)),  # Define AJAX patterns here
+]
+
+# !!
+# неправильная адрессация
+# !!
 

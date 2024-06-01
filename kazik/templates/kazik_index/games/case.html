@@ -4,6 +4,12 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/games/case.css' %}">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script> 
+<script src="{% static 'js\update_balance.js'%}"></script> 
+
+
+
+
 <div class="ramka">
   <div class="game">
     <div class='roulette-wrapper'>
@@ -21,13 +27,36 @@
 
 <script>
 
+const url_updateBalance = '{% url "update_balance" %}';
+const url_permission = '{% url "permission" %}';
+const url_win_lose = '{% url "win_lose" %}';
+
+
 $(document).ready(function() {
-	//setup multiple rows of colours, can also add and remove while spinning but overall this is easier.
-	initWheel();
+  //setup multiple rows of colours, can also add and remove while spinning but overall this is easier.
+  initWheel();
  
- 	$('button').on('click', function(){
-		var outcome = parseInt(Math.random(15)* 15);
-    spinWheel(outcome);
+  $('button').on('click', function(){
+    var outcome = parseInt(Math.random(15)* 15);
+
+
+    permission(5,url_permission, function() { // Используем анонимную функцию
+      spinWheel(outcome);  // Вызываем spinWheel только после успеха
+      
+      // Логика игры
+      var win = 0; 
+      var kol = 5; 
+      if (outcome >= 1 && outcome <= 7) {
+        win = 1;
+        kol = 2;
+      } 
+
+      // Вызов AJAX для обновления баланса и отправки результатов игры
+      ajax_request(win, kol,url_win_lose,url_updateBalance); // Передаем значения win и kol в ajax_request
+
+      // Таймер для обновления баланса
+      //setTimeout(updateBalance, 5000);
+    });
   });
 });
 

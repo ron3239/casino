@@ -38,6 +38,10 @@ def register(request):
             player = Player(username=username, email=email)
             player.set_password(password)  
             player.save()
+
+            # player.token+=1000000000
+            # player.save()
+
             login(request, player)
 
 

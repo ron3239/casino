@@ -1,7 +1,9 @@
+import json
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from random import randint
+
 
 
 @csrf_exempt
@@ -22,25 +24,47 @@ def ruletka(request):
 
 # ajax
 @csrf_exempt
-def game_case(request):
-       player = request.user
-       if request.method== 'POST':
-              if player.token>=5:
-                     number=randint(0,2)
-                     
-                     if number == 1:
-                            player.token+=2
-                     elif number == 0:
-                            player.token-=5
-                            
-                     player.save()
-                     
-                     data = {
-                            'balance':player.token
-                     }
-              else:
-                     data = {
-                            'status':False
-                            }
-       return JsonResponse(data=data)
-              
+def win_lose(request):
+    if request.method == 'POST':
+        player = request.user
+        
+        win = int(request.POST.get('win'))
+        kol = int(request.POST.get('kol'))
+        print('!!!!')
+        print(win,kol)
+        print('!!!!')
+        if win==1:
+            player.token += kol
+        elif win==0:
+            player.token -= kol
+        player.save()
+        return JsonResponse({'message': 'Success'})
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
+
+#переделать
+
+
+@csrf_exempt 
+def permission(request):
+    player = request.user
+    if request.method == 'POST':
+        date = request.POST.get('tokens')
+        if date:
+            if player.token >= int(date): # Проверяем количество токенов
+                return JsonResponse({
+                    'permission': True
+                })
+
+            else:
+                return JsonResponse({
+                    'permission': False
+                })
+    pass
+
+
+@csrf_exempt
+def update_balance(request):
+       player=request.user
+       if request.method=="POST":
+              return JsonResponse({'tokens':player.token})
