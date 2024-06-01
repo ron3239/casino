@@ -30,9 +30,6 @@ def win_lose(request):
         
         win = int(request.POST.get('win'))
         kol = int(request.POST.get('kol'))
-        print('!!!!')
-        print(win,kol)
-        print('!!!!')
         if win==1:
             player.token += kol
         elif win==0:
