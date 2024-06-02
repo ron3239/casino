@@ -2,23 +2,30 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/games/ruletka.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/games/ruletka.css' %}">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{% static 'js\update_balance.js'%}"></script> 
 
-<div class="ruletka">
-    <div class="ruletka_box">
-    <button id="spin" onclick="rotateElem">Spin</button>
-    <span class="arrow"></span>
-    <img src="/static/img/games/ruletka/roulette.png" id="ruletka" class="img_rul">
-  </div>
+
+<div class="div_ramka">
+  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 404.308 404.309" style="enable-background:new 0 0 404.308 404.309;" xml:space="preserve"><g><path d="M0,101.08h404.308L202.151,303.229L0,101.08z"></path></g></svg>
+  <img class="img_ruletka" src="{% static 'img/games/ruletka/roulette_koleso.png' %}" alt="">
+  <button type="button" onclick="rotation">5 Tokens</button>
 </div>
 
 <script>
-  function rotateElem() {
-    const img = document.querySelector('.img_rul');
-    img.style.transformOrigin = 'top left'; // Adjust as needed
-    img.style.transform = 'rotate(90deg)';
-    
+  //35 in ruletka
+
+  const url_updateBalance = '{% url "update_balance" %}';
+  const url_permission = '{% url "permission" %}';
+  const url_win_lose = '{% url "win_lose" %}';
+
+  const bt=document.getElementsByClassName('img_ruletka');
+  function rotation(){
+    bt.rotation(3.27)
   }
+
+
 
 </script>
 
