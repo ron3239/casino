@@ -5,12 +5,13 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/games/ruletka.css' %}">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{% static 'js\update_balance.js'%}"></script> 
+<script src="{% static 'js\games/ruletka.js'%}"></script> 
 
 
 <div class="div_ramka">
   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 404.308 404.309" style="enable-background:new 0 0 404.308 404.309;" xml:space="preserve"><g><path d="M0,101.08h404.308L202.151,303.229L0,101.08z"></path></g></svg>
   <img class="img_ruletka" src="{% static 'img/games/ruletka/roulette_koleso.png' %}" alt="">
-  <button type="button" onclick="rotation">5 Tokens</button>
+  <button class='button_rul' type="button" onclick="rotation();">5 Tokens</button>
 </div>
 
 <script>
@@ -20,11 +21,11 @@
   const url_permission = '{% url "permission" %}';
   const url_win_lose = '{% url "win_lose" %}';
 
-  const bt=document.getElementsByClassName('img_ruletka');
+  {% comment %} const bt=document.getElementsByClassName('img_ruletka');
   function rotation(){
     bt.rotation(3.27)
   }
-
+ {% endcomment %}
 
 
 </script>

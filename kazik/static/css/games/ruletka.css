@@ -34,7 +34,7 @@ body{
   padding: 0 8%;
 
   button{
-    margin-top: 200px;
+    margin-top: 300px;
     padding: 5px;
     background-color: #9D7ACD;
     border-bottom: 3px solid rgba(0,0,0,0.2);
@@ -55,11 +55,12 @@ body{
   }
 
 img{
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position:absolute;
   top: 13%;
   z-index: 1;
+  rotate: 266deg;
 }
 #Capa_1{
   position: absolute;

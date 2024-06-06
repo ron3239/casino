@@ -33,8 +33,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.user_login, name='login'),
     path('register/', views.register, name='register'),
+    #game
     path('case/', views_1.case, name='case'), 
     path('ruletka/', views_1.ruletka, name='ruletka'),
+    path('cards/', views_1.cards, name='cards'),
     path('ajax/', include(ajax_url)),  # Define AJAX patterns here
 ]
 

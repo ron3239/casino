@@ -21,6 +21,10 @@ def case(request):
 def ruletka(request):
        return render(request=request,template_name='kazik_index/games/ruletka.html')
 
+@csrf_exempt
+def cards(request):
+       return render(request=request,template_name='kazik_index/games/cards.html')
+
 
 # ajax
 @csrf_exempt
