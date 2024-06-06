@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+body{
+    background: url(/static/img/games/cards/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+
+.div_ramka{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 5px;
+    align-content: space-around;
+    justify-content: space-around;
+
+
+    max-width: 2000px;
+    width: 100%;
+    max-height: 1000px;
+    height: 100%;
+
+    border: 10px solid #1b156a;
+    border-radius: 20px;
+    background-color: rgba(85,133,228, 0.7);
+    
+}
+
+
+.card {
+    width: 256px;
+    height:  256px;
+    position: relative;
+    perspective: 1000px;
+  }
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+
+    
+
+
+    button{
+      max-width: 256px;
+      max-height: 256px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(100, 1, 1, 0.0);
+      border: rgba(100, 1, 1, 0.0); 
+    }
+   }
+
+
+   .front_img {
+    max-width: 256px;
+    min-width: 256px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  .back_img {
+    max-width: 256px;
+    min-width: 256px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .front{
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.back{
+    transform: perspective(600px) rotateY(180deg);
+}
+
